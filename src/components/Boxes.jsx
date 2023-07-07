@@ -2,20 +2,11 @@ import React, {useState} from 'react'
 
 const Boxes = (props) => {
 
-    const boxStyle = {
-        padding: "20px",
-        gap:"20px",
-        display: "flex",
-        flexWrap: "wrap"
-    }
-
+    const {color, size, id} = props
+    
     return (
         <>
-        <div style={boxStyle}>
-            {props.colors.map(color => (
-                <div style={{background: color, width:"100px", height:"100px"}}></div>
-            ))}
-        </div>
+            <div style={{backgroundColor: color, width:size+"px", height:size+"px"}}>Box {id}</div>
         </>
     )
 }

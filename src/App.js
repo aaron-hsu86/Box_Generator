@@ -5,16 +5,31 @@ import Boxes from './components/Boxes';
 
 function App() {
 
-  const [boxColors, setBoxColor] = useState([]);
+  const [boxes, setBoxColor] = useState([]);
 
   const setColor = ( color ) => {
-    setBoxColor([...boxColors,color]);
+    setBoxColor([...boxes,color]);
   }
+  
+  const boxStyle = {
+    padding: "20px",
+    gap:"20px",
+    display: "flex",
+    flexWrap: "wrap"
+}
 
   return (
     <>
       <AddColor newColor={ setColor } />
-      <Boxes colors={ boxColors } />
+    <div style={boxStyle}>
+      {
+        boxes.map((box, i) => {
+          return (
+            <Boxes color={box.color} size={box.size} id={i} />
+          )
+        })
+      }
+    </div>
     </>
   );
 }
