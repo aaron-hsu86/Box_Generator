@@ -1,12 +1,6 @@
 import React, {useState} from 'react'
 
 const Boxes = (props) => {
-    // const [allBoxes, setBoxes] = useState(props.boxColors)
-    // setBoxes(allBoxes => [...allBoxes, props.color])
-    // const count = [];
-    // count.push(props.color);
-    // console.log(allBoxes)
-    console.log(props.colors)
 
     const boxStyle = {
         padding: "20px",
